@@ -40,7 +40,7 @@ def register(request):
         # student.save()
 
         url = "https://www.fast2sms.com/dev/bulk"
-        # querystring = {"authorization":"Tf0l5vJFUNs3EqRDwmVpjkIHLbYXSBtxGicuhyPQdW9nr2e178brnxh0MUt2DmlTGoPKJLEvaAYN9SW6","sender_id":"TXTIND","message":"Welcome","route":"dlt","numbers":p}
+        # querystring = {"authorization":"","sender_id":"TXTIND","message":"Welcome","route":"dlt","numbers":p}
 
         # headers = {
         #     'cache-control': "no-cache"
@@ -65,7 +65,7 @@ def register(request):
             'numbers': p    
         }
         headers = { 
-            'authorization': 'Tf0l5vJFUNs3EqRDwmVpjkIHLbYXSBtxGicuhyPQdW9nr2e178brnxh0MUt2DmlTGoPKJLEvaAYN9SW6', 
+            'authorization': 'auth_keys', 
             'Content-Type': "application/x-www-form-urlencoded", 
             'Cache-Control': "no-cache"
         }
