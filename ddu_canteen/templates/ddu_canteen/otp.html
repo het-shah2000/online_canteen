@@ -1,0 +1,49 @@
+{% extends 'ddu_canteen/base.html' %}
+{% block content %}
+    <!-- Start Register  -->
+    <div class="contact-box-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-sm-12">
+                    <div class="contact-form-right">
+                        <form action ="{% url 'otp' %}" method="POST">
+                            {% csrf_token %}
+                            <div class="row">
+                                
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="otp" placeholder="OTP" autocomplete="off" required data-error="Enter Valid OTP">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-12">
+                                    <div class="submit-button text-center">
+                                        <button class="btn hvr-hover" type="submit" value="submit">Enter Otp</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+				<div class="col-lg-4 col-sm-12">
+                    <div class="contact-info-left">
+                        <h2>CONTACT INFO</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna diam, maximus ut ullamcorper quis, placerat id eros. Duis semper justo sed condimentum rutrum. Nunc tristique purus turpis. Maecenas vulputate. </p>
+                        <ul>
+                            <li>
+                                <p><i class="fas fa-map-marker-alt"></i>Address:Ddit College Canteen,<br> Ddu University, Sh 61,<br>Nadiad - 387001 </p>
+                            </li>
+                            <li>
+                                <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+9102682520502">+9102682520502</a></p>
+                            </li>
+                            <li>
+                                <p><i class="fas fa-envelope"></i>Email: <a href="mailto:canteen@ddu.ac.in">canteen@ddu.ac.in</a></p>
+                            </li>
+                        </ul>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

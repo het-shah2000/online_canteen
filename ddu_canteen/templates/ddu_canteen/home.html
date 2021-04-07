@@ -1,0 +1,182 @@
+{% extends "ddu_canteen/base.html" %}
+{% load static %}
+{% block content %}
+    <!-- Start Top Search -->
+    <div class="top-search">
+        <div class="container">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                <input type="text" class="form-control" placeholder="Search">
+                <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+            </div>
+        </div>
+    </div>
+    <!-- End Top Search -->
+    <!-- Start Slider -->
+    <div id="slides-shop" class="cover-slides">
+        <ul class="slides-container">
+            <li class="text-center">
+                <img src="{% static 'ddu_canteen/images/ban1.jpg' %}" alt="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="m-b-20"><strong>Welcome To <br> bunkORNER</strong></h1>
+                            <p class="m-b-40">Bunk Your CLASSES<br> Not Your HUNGER</p>
+                            <p><a class="btn hvr-hover" href="#menu">Order Now</a></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="text-center">
+                <img src="{% static 'ddu_canteen/images/ban2.jpg' %}" alt="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="m-b-20"><strong>Welcome To <br> bunkORNER</strong></h1>
+                            <p class="m-b-40">Bunk Your CLASSES<br> Not Your HUNGER</p>                            <p><a class="btn hvr-hover" href="#">Order Now</a></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="text-center">
+                <img src="{% static 'ddu_canteen/images/ban3.jpg' %}" alt="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="m-b-20"><strong>Welcome To <br> bunkORNER</strong></h1>
+                            <p class="m-b-40">Bunk Your CLASSES<br> Not Your HUNGER</p>                            <p><a class="btn hvr-hover" href="#">Order Now</a></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="text-center">
+                <img src="{% static 'ddu_canteen/images/ban4.jpg' %}" alt="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="m-b-20"><strong>Welcome To <br> bunkORNER</strong></h1>
+                            <p class="m-b-40">Bunk Your CLASSES<br> Not Your HUNGER</p>                            <p><a class="btn hvr-hover" href="#">Order Now</a></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="text-center">
+                <img src="{% static 'ddu_canteen/images/ban5.jpg' %}" alt="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="m-b-20"><strong>Welcome To <br> bunkORNER</strong></h1>
+                            <p class="m-b-40">Bunk Your CLASSES<br> Not Your HUNGER</p>                            <p><a class="btn hvr-hover" href="#">Order Now</a></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="text-center">
+                <img src="{% static 'ddu_canteen/images/ban6.jpg' %}" alt="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="m-b-20"><strong>Welcome To <br> bunkORNER</strong></h1>
+                            <p class="m-b-40">Bunk Your CLASSES<br> Not Your HUNGER</p>                            <p><a class="btn hvr-hover" href="#">Order Now</a></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="text-center">
+                <img src="{% static 'ddu_canteen/images/ban7.jpg' %}" alt="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="m-b-20"><strong>Welcome To <br> bunkORNER</strong></h1>
+                            <p class="m-b-40">Bunk Your CLASSES<br> Not Your HUNGER</p>                            <p><a class="btn hvr-hover" href="#">Order Now</a></p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="slides-navigation">
+            <a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+        </div>
+    </div>
+    <!-- End Slider -->
+	
+	
+
+    <!-- Start Products  -->
+    <div class="products-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-all text-center">
+                        <h1 id="menu">Menu</h1>
+                        <p>Satisfy Your Snack Attack</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="special-menu text-center">
+                        <div class="button-group filter-button-group">
+                            <button class="active" data-filter="*">All</button>
+                            <button data-filter=".breakfast">Breakfast</button>
+                            <button data-filter=".lunch">Lunch</button>
+                            <button data-filter=".snacks">Snacks</button>
+                            <button data-filter=".beverages">Beverages</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row special-list">
+            {% for item in items %}
+                
+                <div data-items="{{item.name}}" data-action="add" class="update-cart col-lg-3 col-md-6 special-grid {{ item.get_category_display }}">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <div class="type-lb">
+                                <p class="{{ item.get_label_display }}" >{{ item.get_label_display }}</p>
+                            </div>
+                            <img src="{{item.imageURL}}" class="img-fluid" alt="Image">
+                            <div class="mask-icon">
+                                <ul>    
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Favorites"><i class="far fa-heart"></i></a></li>
+                                </ul>
+                                {% comment %} <a data-item="{{item.price}}" data-action="add" class="cart">Add to Platter</a> {% endcomment %}
+                                <button class="cart btn" onclick="update_item('{{item.id}}', 'add')">Add to Platter</button>
+                                {% comment %} <button class="cart btn" onclick="add_to_cart({{item.id}}, '{{item.name}}', {{item.price}})">Add to Platter</button> {% endcomment %}
+                            </div>
+                        </div>
+                        
+                        <div class="why-text">
+                            <h4>{{item.name}}</h4>
+                            <h5>₹{{item.price}}</h5>
+                        </div>
+                    </div>
+                </div>
+
+            {%endfor%}
+            </div>    
+    
+            </div>
+        </div>
+    </div>
+    <!-- End Products  -->
+
+    <div class="box-add-products">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-12">
+					<div class="offer-box-products">
+						<img class="img-fluid" src="images/add-img-01.jpg" alt="" />
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12">
+					<div class="offer-box-products">
+						<img class="img-fluid" src="images/add-img-02.jpg" alt="" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock content %}

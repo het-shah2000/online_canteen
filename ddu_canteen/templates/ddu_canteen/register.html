@@ -1,0 +1,154 @@
+{% extends 'ddu_canteen/base.html' %}
+{% block content %}
+    <!-- Start Register  -->
+    <div class="contact-box-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-sm-12">
+                    <div class="contact-form-right">
+                        <h2>Register yourself</h2>
+                        <form action ="{% url 'register' %}" method="POST">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="username" placeholder="Username" autocomplete="off" required data-error="Enter Valid Username">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="firstname" placeholder="First Name" autocomplete="off" required data-error="Enter Valid Name">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="lastname" placeholder="Last Name" autocomplete="off">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="college_id" placeholder="Your College Id" autocomplete="off" required data-error="Enter Valid College Id">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="email" placeholder="Your Email" autocomplete="off" required data-error="Enter Valid Email">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="phone" placeholder="Your Phone Number" autocomplete="off" required data-error="Enter Valid Number">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" name="pass" placeholder="Password" autocomplete="off" required data-error="Please enter your password">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" name="re-pass" placeholder="Re-Enter Password" autocomplete="off" required data-error="Please re-enter your password">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-12">
+                                    <div class="submit-button text-center">
+                                        <button class="btn hvr-hover" type="submit" value="submit">Sign Up</button>
+                                    </div>
+                                </div> 
+                                
+                                <div class="border-top pt-3">
+                                    <small class="text-muted"> 
+                                    Already Have An Account? <a class= "ml-2" href="#">Sign In</a>
+                                    </small>
+                                </div> 
+                            </div>
+                        </form>
+                        {% comment %} <form action="registration_done" method="POST">
+                            {%csrf_token%}
+                                <input name="name">
+                                <input name="college_id">
+                                <input name="email">
+                                <input name="pass">
+                                <input name="re-pass">
+                                <input type="submit" value="Submit">
+                        </form> {% endcomment %}
+
+
+
+                        {% comment %} <form id="contactForm" action="Register" method="post">
+                            {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="name" name="idname" placeholder="Your Name" required data-error="Please enter your name">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" placeholder="Your College Id" id="email" class="form-control" name="ename" required data-error="Please enter your College Id">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" placeholder="Your Phone Number" id="pno" class="form-control" name="pname" required data-error="Please enter your Phone Number">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" id="pass" name="passname" placeholder="Password" required data-error="Please enter your password">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" id="repass" name="repassname" placeholder="Re-enter Password" required data-error="Please re-enter your password">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="submit-button text-center">
+                                            <button class="btn hvr-hover" id="submit" type="submit">Register</button>
+                                            <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form> {% endcomment %}
+                    </div>
+                </div>
+				<div class="col-lg-4 col-sm-12">
+                    <div class="contact-info-left">
+                        <h2>CONTACT INFO</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna diam, maximus ut ullamcorper quis, placerat id eros. Duis semper justo sed condimentum rutrum. Nunc tristique purus turpis. Maecenas vulputate. </p>
+                        <ul>
+                            <li>
+                                <p><i class="fas fa-map-marker-alt"></i>Address:Ddit College Canteen,<br> Ddu University, Sh 61,<br>Nadiad - 387001 </p>
+                            </li>
+                            <li>
+                                <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+9102682520502">+9102682520502</a></p>
+                            </li>
+                            <li>
+                                <p><i class="fas fa-envelope"></i>Email: <a href="mailto:canteen@ddu.ac.in">canteen@ddu.ac.in</a></p>
+                            </li>
+                        </ul>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
